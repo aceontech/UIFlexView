@@ -33,14 +33,15 @@ class AppViewController: UIViewController {
         ])
         
         // Set up boxes
-        flexView.addSubview(Box.with(label: "1"))
-        flexView.addSubview(Box.with(label: "2"))
-        flexView.addSubview(Box.with(label: "3"))
-        flexView.addSubview(Box.with(label: "4"))
-        flexView.addSubview(Box.with(label: "5"))
-        flexView.addSubview(Box.with(label: "6"))
-        flexView.addSubview(Box.with(label: "7"))
-        flexView.addSubview(Box.with(label: "8"))
-        flexView.addSubview(Box.with(label: "9"))
+        flexView.addSubview(Box.staticallySized(label: "1"))
+        flexView.addSubview(Box.staticallySized(label: "2"))
+        flexView.addSubview(Box.staticallySized(label: "3"))
+        flexView.addSubview(Box.staticallySized(label: "4"))
+        flexView.addSubview(Box.staticallySized(label: "5"))
+        flexView.addSubview(Box.staticallySized(label: "6"))
+        flexView.addSubview(Box.staticallySized(label: "7"))
+        flexView.addSubview(Box.staticallySized(label: "8"))
+        flexView.addSubview(Box.staticallySized(label: "9"))
+        flexView.addSubview(Box.staticallySized(label: "10"))
     }
 }
