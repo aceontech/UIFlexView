@@ -23,6 +23,8 @@
     
     flexView.translatesAutoresizingMaskIntoConstraints = NO;
     flexView.backgroundColor = UIColor.yellowColor;
+    flexView.flexDirection = UIFlexDirectionConfigRow;
+    flexView.flexWrap = UIFlexWrapConfigWrap;
     
     [NSLayoutConstraint activateConstraints:@[
         [flexView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
