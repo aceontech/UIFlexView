@@ -42,6 +42,12 @@ class Box: UIView {
         return box
     }
     
+    static func dynamicallySized(label: String) -> Box {
+        let box = Box(frame: .zero)
+        box.labelText = label
+        return box
+    }
+    
     private func setup() {
         translatesAutoresizingMaskIntoConstraints = false
         layer.borderWidth = 1.0 / UIScreen.main.scale
