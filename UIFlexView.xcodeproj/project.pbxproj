@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E04AE04223D4424700DECB50 /* UFVWrapGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = E04AE04023D4424700DECB50 /* UFVWrapGroup.h */; };
 		E04AE04323D4424700DECB50 /* UFVWrapGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E04AE04123D4424700DECB50 /* UFVWrapGroup.m */; };
+		E04AE05023D449F600DECB50 /* UIView+FlexFraming.h in Headers */ = {isa = PBXBuildFile; fileRef = E04AE04E23D449F500DECB50 /* UIView+FlexFraming.h */; };
+		E04AE05123D449F600DECB50 /* UIView+FlexFraming.m in Sources */ = {isa = PBXBuildFile; fileRef = E04AE04F23D449F500DECB50 /* UIView+FlexFraming.m */; };
 		FA36204C23C52E13008DD8A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36204B23C52E13008DD8A2 /* AppDelegate.swift */; };
 		FA36204E23C52E13008DD8A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36204D23C52E13008DD8A2 /* SceneDelegate.swift */; };
 		FA36205223C52E14008DD8A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA36205123C52E14008DD8A2 /* Assets.xcassets */; };
@@ -82,6 +84,8 @@
 /* Begin PBXFileReference section */
 		E04AE04023D4424700DECB50 /* UFVWrapGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UFVWrapGroup.h; sourceTree = "<group>"; };
 		E04AE04123D4424700DECB50 /* UFVWrapGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UFVWrapGroup.m; sourceTree = "<group>"; };
+		E04AE04E23D449F500DECB50 /* UIView+FlexFraming.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+FlexFraming.h"; sourceTree = "<group>"; };
+		E04AE04F23D449F500DECB50 /* UIView+FlexFraming.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+FlexFraming.m"; sourceTree = "<group>"; };
 		FA36202B23C52DBE008DD8A2 /* UIFlexView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIFlexView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA36202F23C52DBE008DD8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA36204923C52E13008DD8A2 /* UIFlexViewSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIFlexViewSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +146,8 @@
 		E04AE03D23D4418400DECB50 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				E04AE04E23D449F500DECB50 /* UIView+FlexFraming.h */,
+				E04AE04F23D449F500DECB50 /* UIView+FlexFraming.m */,
 				E04AE04023D4424700DECB50 /* UFVWrapGroup.h */,
 				E04AE04123D4424700DECB50 /* UFVWrapGroup.m */,
 			);
@@ -254,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E04AE04223D4424700DECB50 /* UFVWrapGroup.h in Headers */,
+				E04AE05023D449F600DECB50 /* UIView+FlexFraming.h in Headers */,
 				FA36206823C53014008DD8A2 /* UIFlexView.h in Headers */,
 				FA37C41823C91B2E00DBBD8E /* UIFlexViewConfiguration.h in Headers */,
 			);
@@ -430,6 +437,7 @@
 			files = (
 				FA37C41C23C9C6D600DBBD8E /* UIFlexViewConfiguration.m in Sources */,
 				E04AE04323D4424700DECB50 /* UFVWrapGroup.m in Sources */,
+				E04AE05123D449F600DECB50 /* UIView+FlexFraming.m in Sources */,
 				FA36206923C53014008DD8A2 /* UIFlexView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

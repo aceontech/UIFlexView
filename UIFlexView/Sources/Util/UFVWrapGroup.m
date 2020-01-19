@@ -7,6 +7,7 @@
 //
 
 #import "UFVWrapGroup.h"
+#import <UIView+FlexFraming.h>
 
 @interface UFVWrapGroup ()
 @property (nonatomic, assign) CGRect frame;
@@ -70,41 +71,19 @@
 
 -(CGRect)trailingFrameFor:(UIView *)view alongMainAxisFrom:(nullable UIView *)referenceView
 {
-    return [self trailingFrameFor:view from:referenceView direction:self.flexDirection];
+    return [view trailingFrameFrom:referenceView alongDirection:self.flexDirection inParentFrame:self.frame];
 }
 
 -(CGRect)trailingFrameFor:(UIView *)view alongCrossAxisFrom:(nullable UIView *)referenceView
 {
     UIFlexDirectionConfig direction = UIFlexDirectionConfigFlip(self.flexDirection);
-    CGRect frame = [self trailingFrameFor:view from:referenceView direction:direction];
+    CGRect frame = [view trailingFrameFrom:referenceView alongDirection:direction inParentFrame:self.frame];
 
     if ([self maxPositionAlongCrossAxisFromFrame:frame] < self.maxPositionAlongCrossAxis) {
         frame = [self frame:frame withUpdatedPositionAlongCrossAxis:self.maxPositionAlongCrossAxis];
     } else {
         [self persistMaxPositionInFrame:frame alongDirection:direction];
     }
-    return frame;
-}
-
--(CGRect)trailingFrameFor:(UIView *)view from:(nullable UIView *)referenceView direction:(UIFlexDirectionConfig)direction
-{
-    CGRect referenceViewFrame = [self viewFrameOrZero:referenceView];
-
-    CGSize size = [view systemLayoutSizeFittingSize:self.frame.size];
-    CGRect frame = CGRectMake(0, 0, size.width, size.height);
-
-    switch (direction) {
-        case UIFlexDirectionConfigRow:
-            frame.origin.x = CGRectGetMaxX(referenceViewFrame);
-            frame.origin.y = CGRectGetMinY(referenceViewFrame);
-            break;
-
-        case UIFlexDirectionConfigColumn:
-            frame.origin.x = CGRectGetMinX(referenceViewFrame);
-            frame.origin.y = CGRectGetMaxY(referenceViewFrame);
-            break;
-    }
-
     return frame;
 }
 
@@ -119,11 +98,6 @@
             self.maxPositionAlongCrossAxis = CGRectGetMaxY(frame);
             break;
     }
-}
-
--(CGRect)viewFrameOrZero:(UIView * _Nullable)view
-{
-    return view == nil ? CGRectZero : view.frame;
 }
 
 -(CGFloat)maxPositionAlongMainAxisFromFrame:(CGRect)frame
