@@ -5,9 +5,9 @@ Work in progress.
 
 ## Usage
 
-### `flexDirection` and `flexWrap`
+### 1. `flexDirection` and `flexWrap`
 
-#### Wrap Rows
+#### 1.1 Wrap Rows
 
 ```swift
 view.flexDirection = .row
@@ -16,7 +16,7 @@ view.flexWrap = .wrap
 
 ![Row wrap example](https://github.com/jarroolabs/UIFlexView/raw/master/UIFlexViewTests/__Snapshots__/UIFlexViewTests/testRowWrap.8.png)
 
-#### Wrap Columns
+#### 1.2 Wrap Columns
 
 ```swift
 view.flexDirection = .column
