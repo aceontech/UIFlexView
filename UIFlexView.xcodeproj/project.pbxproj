@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E04AE04223D4424700DECB50 /* UFVWrapGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = E04AE04023D4424700DECB50 /* UFVWrapGroup.h */; };
+		E04AE04323D4424700DECB50 /* UFVWrapGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E04AE04123D4424700DECB50 /* UFVWrapGroup.m */; };
 		FA36204C23C52E13008DD8A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36204B23C52E13008DD8A2 /* AppDelegate.swift */; };
 		FA36204E23C52E13008DD8A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36204D23C52E13008DD8A2 /* SceneDelegate.swift */; };
 		FA36205223C52E14008DD8A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA36205123C52E14008DD8A2 /* Assets.xcassets */; };
@@ -78,6 +80,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E04AE04023D4424700DECB50 /* UFVWrapGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UFVWrapGroup.h; sourceTree = "<group>"; };
+		E04AE04123D4424700DECB50 /* UFVWrapGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UFVWrapGroup.m; sourceTree = "<group>"; };
 		FA36202B23C52DBE008DD8A2 /* UIFlexView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIFlexView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA36202F23C52DBE008DD8A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA36204923C52E13008DD8A2 /* UIFlexViewSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIFlexViewSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +139,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E04AE03D23D4418400DECB50 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E04AE04023D4424700DECB50 /* UFVWrapGroup.h */,
+				E04AE04123D4424700DECB50 /* UFVWrapGroup.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		FA36202123C52DBE008DD8A2 = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +213,7 @@
 				FA36206723C53014008DD8A2 /* UIFlexView.m */,
 				FA37C41723C91B2E00DBBD8E /* UIFlexViewConfiguration.h */,
 				FA37C41B23C9C6D600DBBD8E /* UIFlexViewConfiguration.m */,
+				E04AE03D23D4418400DECB50 /* Util */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -239,6 +253,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04AE04223D4424700DECB50 /* UFVWrapGroup.h in Headers */,
 				FA36206823C53014008DD8A2 /* UIFlexView.h in Headers */,
 				FA37C41823C91B2E00DBBD8E /* UIFlexViewConfiguration.h in Headers */,
 			);
@@ -330,12 +345,14 @@
 		FA36202223C52DBE008DD8A2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = UFV;
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = Jarroo;
 				TargetAttributes = {
 					FA36202A23C52DBE008DD8A2 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1120;
 					};
 					FA36204823C52E13008DD8A2 = {
 						CreatedOnToolsVersion = 11.3;
@@ -412,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA37C41C23C9C6D600DBBD8E /* UIFlexViewConfiguration.m in Sources */,
+				E04AE04323D4424700DECB50 /* UFVWrapGroup.m in Sources */,
 				FA36206923C53014008DD8A2 /* UIFlexView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,6 +612,7 @@
 		FA36204023C52DBE008DD8A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = RPSGNC4G66;
@@ -610,6 +629,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jarroo.UIFlexView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -617,6 +638,7 @@
 		FA36204123C52DBE008DD8A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = RPSGNC4G66;
@@ -633,6 +655,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jarroo.UIFlexView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
