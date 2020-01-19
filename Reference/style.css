@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+*::after, *::before {
+    box-sizing: inherit;
+}
+
+.flexContainer {
+    border: 1px dotted black;
+    
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.flexBox {
+    border: 1px solid black;
+    flex: 0 1 auto;
+}
+
+.flexLabel {
+    margin: 0;
+    padding: 50px;
+}

@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <UIFlexView/UIFlexViewConfiguration.h>
+#import <UFVGroup.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UFVWrapGroup : NSObject
+@interface UFVWrapGroup : UFVGroup
 
 +(void)layoutInFrame:(CGRect)frame
                items:(NSArray<UIView*>*)items

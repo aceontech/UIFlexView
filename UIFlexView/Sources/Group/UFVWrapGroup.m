@@ -10,10 +10,6 @@
 #import <UIView+FlexFraming.h>
 
 @interface UFVWrapGroup ()
-@property (nonatomic, assign) CGRect frame;
-@property (nonatomic, copy) NSArray<UIView*>* items;
-@property (nonatomic, assign) UIFlexDirectionConfig flexDirection;
-
 @property (nonatomic, assign) CGFloat maxPositionAlongCrossAxis;
 @end
 
@@ -27,12 +23,8 @@
 
 -(instancetype)initWithFrame:(CGRect)frame items:(NSArray<UIView*>*)items flexDirection:(UIFlexDirectionConfig)flexDirection
 {
-    self = [super init];
+    self = [super initWithFrame:frame items:items flexDirection:flexDirection];
     if (self) {
-        self.frame = frame;
-        self.items = items;
-        self.flexDirection = flexDirection;
-
         [self reset];
     }
     return self;
@@ -56,7 +48,7 @@
 
         CGRect nextFrame = [self trailingFrameFor:nextView alongMainAxisFrom:previousView];
 
-        if ([self maxPositionAlongMainAxisFromFrame:nextFrame] <= [self maxDimensionAlongMainAxis]) {
+        if ([self maxPositionAlongMainAxis:nextFrame] <= [self maxDimensionAlongMainAxis]) {
             nextView.frame = nextFrame;
         } else {
             CGRect nextFrame = [self trailingFrameFor:nextView alongCrossAxisFrom:previousView];
@@ -79,7 +71,7 @@
     UIFlexDirectionConfig direction = UIFlexDirectionConfigFlip(self.flexDirection);
     CGRect frame = [view trailingFrameFrom:referenceView alongDirection:direction inParentFrame:self.frame];
 
-    if ([self maxPositionAlongCrossAxisFromFrame:frame] < self.maxPositionAlongCrossAxis) {
+    if ([self maxPositionAlongCrossAxis:frame] < self.maxPositionAlongCrossAxis) {
         frame = [self frame:frame withUpdatedPositionAlongCrossAxis:self.maxPositionAlongCrossAxis];
     } else {
         [self persistMaxPositionInFrame:frame alongDirection:direction];
@@ -97,27 +89,6 @@
         case UIFlexDirectionConfigColumn:
             self.maxPositionAlongCrossAxis = CGRectGetMaxY(frame);
             break;
-    }
-}
-
--(CGFloat)maxPositionAlongMainAxisFromFrame:(CGRect)frame
-{
-    return [self maxPositionAlongDirection:self.flexDirection fromFrame:frame];
-}
-
--(CGFloat)maxPositionAlongCrossAxisFromFrame:(CGRect)frame
-{
-    return [self maxPositionAlongDirection:UIFlexDirectionConfigFlip(self.flexDirection) fromFrame:frame];
-}
-
--(CGFloat)maxPositionAlongDirection:(UIFlexDirectionConfig)direction fromFrame:(CGRect)frame
-{
-    switch (direction) {
-        case UIFlexDirectionConfigRow:
-            return CGRectGetMaxX(frame);
-
-        case UIFlexDirectionConfigColumn:
-            return CGRectGetMaxY(frame);
     }
 }
 
